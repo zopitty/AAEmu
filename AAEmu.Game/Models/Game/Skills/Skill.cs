@@ -490,14 +490,14 @@ public class Skill
     {
         if (caster is not Unit unit) { return; }
 
-        if (!_bypassGcd)
-        {
-            var gcd = Template.CustomGcd;
-            if (Template.DefaultGcd)
-                gcd = caster is Npc ? 1500 : 1000;
+        //if (!_bypassGcd)
+        //{
+        //    var gcd = Template.CustomGcd;
+        //    if (Template.DefaultGcd)
+        //        gcd = caster is Npc ? 1500 : 1000;
 
-            unit.GlobalCooldown = DateTime.UtcNow.AddMilliseconds(gcd * (unit.GlobalCooldownMul / 100));
-        }
+        //    unit.GlobalCooldown = DateTime.UtcNow.AddMilliseconds(gcd * (unit.GlobalCooldownMul / 100));
+        //}
 
         if (caster is Npc && Template.SkillControllerId != 0)
         {
